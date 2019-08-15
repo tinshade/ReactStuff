@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+section{
+  background-image: linear-gradient(lightblue, cornsilk);
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding-top: 10%;
+}
+
+body{
+  font-family: 'josefin Sans', sans-serif;
+}
+
+ul{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+input[type=text]{
+ width: 70%;
+ padding: 6px;
+ margin: 0 auto;
+ margin-bottom: 20px;
+ text-align: center;
+ border-radius: 25px;
+}
+
+.gifbg{
+  background-image: url('../../assets/loader.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+}
+
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  background-image: url('../../assets/loader.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+}
+
+.hking{
+  color: rgb(218, 179, 6);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: black;
+  background-image: url('../../assets/loader.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-title{
+  position: relative;
+  top: 175px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
