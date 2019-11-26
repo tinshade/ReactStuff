@@ -1,0 +1,85 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+}
+
+
+input{
+  width: 90%;
+  padding : 10px;
+  text-decoration: none;
+  border-left: none;
+  border-right: none;
+  border-top: none; 
+  border-bottom: solid salmon 1px;
+  margin-right: 6px;
+}
+
+.info{
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.8rem;
+}
+
+.btn{
+  height: 46px;
+  color: white;
+  background-color: orange;
+  border: none;
+  text-decoration: none;
+}
+
+.ing{
+  max-height: 290px;
+  overflow: hidden;
+}
+
+.hero-bd{
+  background: url('https://source.unsplash.com/phEaeqe555M') no-repeat fixed bottom center/cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.recipe{
+  background: url('https://source.unsplash.com/6MT4_Ut8a3Y') no-repeat fixed bottom center/cover;
+  height: 100vh;
+  width: 100%;
+}
+.herotext{
+  background-color: rgba(255,255,255,0.6);
+  position: relative;
+  top: 10%;
+  height: 60vh;
+  padding-top: 7%;
+}
+
+.herotext h1{
+  font-size: 4.6em;
+}
+
+.card{
+  min-height:874px;
+  max-height:874px;
+  overflow: hidden;
+}
+
+.sec{
+  min-height: 100vh;
+}
+
+.btn-success{
+  border-radius: 20px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
