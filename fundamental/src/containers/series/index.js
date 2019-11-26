@@ -59,6 +59,7 @@ class Series extends Component{
             <section>
                 <Intro message="Find all your web-series and TV shows right here!" />
                 {/* Displaying the length of the 'series' array in the state */}
+                <h5 className="text-danger">You have to enable loading of scripts from top right of your address bar if you can't see the list!</h5>
                 <h1>We currently have {this.state.series.length} shows at your disposal!</h1>
                 <br/>
                 <div className="container">
