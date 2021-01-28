@@ -20,6 +20,12 @@ function App() {
               <a href="/takinginput" title="Check out the dynamic-input color block!">Taking Input</a>
             </li>
             <li>
+              <a href="/tutorialmode" title="Check out the Tutorial Guide Webpage!">Tour Guide</a>
+            </li>
+            <li>
+              <a href="/sidebar" title="Check out the Styled Sidebar with React-Sidebar!">Sidebar Demo</a>
+            </li>
+            <li>
               <a href="/Basics" title="Check out the basics">Basics</a>
             </li>
           </ul>
