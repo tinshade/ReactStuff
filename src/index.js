@@ -1,40 +1,47 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
-import ModernNav from './components/ModernNav/ModernNav';
-import TypingIndicator from './components/TypingIndicator/TypingIndicator';
-import Basics from './components/Basics/Basics';
-import UseStateHook from './components/Basics/Hooks/UseStateHook';
-import UseEffectHook from './components/Basics/Hooks/UseEffectHook';
-import UseContextHook from './components/Basics/Hooks/UseContextHook';
-import RoutingExample from './components/Basics/Routing/RoutingExample';
-import TakingInput from './components/Basics/TakingInput';
-import TutorialMode from './components/TutorialMode/TutorialMode';
-import StyledSideNav from './components/SideBar/SidebarExamples';
+import ReactDOM, { render } from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner'
+// const App = () => {
 
-const routing = (
-  <Router>
-    <React.StrictMode>
-      <Switch>
-        <Route exact path="/" component={App}/>
-        <Route exact path="/modernav" component={ModernNav}/>
-        <Route exact path="/typeanim" component={TypingIndicator}/>
-        <Route exact path="/takinginput" component={TakingInput}/>
-        <Route exact path="/tutorialmode" component={TutorialMode}/>
-        <Route exact path="/sidebar" component={StyledSideNav}/>
+class App extends React.Component{
+    // constructor(props){
+    //     super(props);
+    //     this.state = {lat: null, errorMessage : ''}; 
+    // }
+    
+    // Alternate method of initiating state
+    state = {lat: null, errorMessage : ''};
+    componentDidMount(){
+        console.log("component mounted");
+        window.navigator.geolocation.getCurrentPosition(
+            position => this.setState({lat: position.coords.latitude}),
+            error => this.setState({errorMessage: error.message})
+        );
+    }
 
+    componentDidUpdate(){
+        console.log("Component updated");
+    }
 
-        <Route exact path="/Basics" component={Basics}/>
-        <Route exact path="/Basics/useStateHook" component={UseStateHook}/>
-        <Route exact path="/Basics/useEffectHook" component={UseEffectHook}/>
-        <Route exact path="/Basics/useContextHook" component={UseContextHook}/>
-        <Route exact path="/Basics/RoutingExample" component={RoutingExample}/>
+    render() {
+        if(this.state.errorMessage && !this.state.lat){
+            return (
+                <div>
+                Error : {this.state.errorMessage}
+                </div>);    
+        }
+        if(!this.state.errorMessage && this.state.lat){
+            return (
+                <SeasonDisplay lat={this.state.lat} />
+                // <div>
+                //     Latitude: {this.state.lat}
+                // </div>
+                );            
+        }
+        return <Spinner message="Please accept location request"/>;
+        
+    }
+};
 
-      </Switch>
-    </React.StrictMode>
-  </Router>
-);
-
-ReactDOM.render(routing, document.getElementById("root"));
+ReactDOM.render(<App/>, document.querySelector('#root'));
